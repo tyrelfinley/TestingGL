@@ -32,22 +32,6 @@ int main() {
 	glViewport(0, 0, 800, 600);
 
 	Shader new_shader("C:/Users/Tyrel Finley/Desktop/Development/TestingGL/TestingGL/default.vert", "C:/Users/Tyrel Finley/Desktop/Development/TestingGL/TestingGL/default_orange.frag");
-	Shader new_shader2("C:/Users/Tyrel Finley/Desktop/Development/TestingGL/TestingGL/default.vert", "C:/Users/Tyrel Finley/Desktop/Development/TestingGL/TestingGL/default_green.frag");
-	
-	float triangle1_vertices[] = {
-		 0.5f,  0.5f, 0.0f,  // top right
-		 0.5f, -0.5f, 0.0f,  // bottom right
-		-0.5f,  0.5f, 0.0f,  // top left 
-	};
-
-	float triangle2_vertices[] = {
-		 0.5f, -0.5f, 0.0f,  // bottom right
-		-0.5f, -0.5f, 0.0f,  // bottom left
-		-0.5f,  0.5f, 0.0f   // top left
-	};
-
-	My_Triangle triangle1(triangle1_vertices, sizeof(triangle1_vertices));
-	My_Triangle triangle2(triangle2_vertices, sizeof(triangle2_vertices));
 
 	float middle_tri_vertices[] = {
 		 0.0f,  0.5f, 0.0f,  // top right
@@ -66,11 +50,6 @@ int main() {
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 		new_shader.use();
-		//triangle1.draw_triangle();
-
-		//new_shader2.use();
-		//triangle2.draw_triangle();
-
 		middle_tri.draw_triangle();
 
 		glfwSwapBuffers(window);
